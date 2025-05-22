@@ -245,33 +245,6 @@ export default function Stories({ data }) {
                             <X className="w-6 h-6" />
                         </motion.button>
 
-                        {/* Navigation buttons */}
-                        <motion.button
-                            onClick={prevSlide}
-                            className="absolute left-4 top-1/2 -translate-y-1/2 z-50 text-white p-3 rounded-full bg-black/30 backdrop-blur-md hover:bg-black/50"
-                            aria-label="Previous slide"
-                            whileHover={{ scale: 1.1, x: -5 }}
-                            whileTap={{ scale: 0.9 }}
-                            initial={{ opacity: 0, x: 20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.2 }}
-                        >
-                            <ChevronLeft className="w-6 h-6" />
-                        </motion.button>
-
-                        <motion.button
-                            onClick={nextSlide}
-                            className="absolute right-4 top-1/2 -translate-y-1/2 z-50 text-white p-3 rounded-full bg-black/30 backdrop-blur-md hover:bg-black/50"
-                            aria-label="Next slide"
-                            whileHover={{ scale: 1.1, x: 5 }}
-                            whileTap={{ scale: 0.9 }}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.2 }}
-                        >
-                            <ChevronRight className="w-6 h-6" />
-                        </motion.button>
-
                         {/* Story content */}
                         <div className="relative w-full max-h-[90vh] sm:max-w-md mx-auto px-4 flex items-center justify-center">
                             {currentSlide && (
@@ -399,6 +372,33 @@ export default function Stories({ data }) {
                                                 </svg>
                                             )}
                                         </motion.button>
+
+                                        {/* Navigation buttons added here */}
+                                        <motion.button
+                                            onClick={prevSlide}
+                                            className="absolute left-1 top-1/2 -translate-y-1/2 z-50 text-white p-3 rounded-full bg-black/30 backdrop-blur-md hover:bg-black/50 cursor-pointer"
+                                            aria-label="Previous slide"
+                                            whileHover={{ scale: 1.1, x: -5 }}
+                                            whileTap={{ scale: 0.9 }}
+                                            initial={{ opacity: 0, x: 20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: 0.2 }}
+                                        >
+                                            <ChevronLeft className="w-6 h-6" />
+                                        </motion.button>
+
+                                        <motion.button
+                                            onClick={nextSlide}
+                                            className="absolute right-1 top-1/2 -translate-y-1/2 z-50 text-white p-3 rounded-full bg-black/30 backdrop-blur-md hover:bg-black/50 cursor-pointer"
+                                            aria-label="Next slide"
+                                            whileHover={{ scale: 1.1, x: 5 }}
+                                            whileTap={{ scale: 0.9 }}
+                                            initial={{ opacity: 0, x: -20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: 0.2 }}
+                                        >
+                                            <ChevronRight className="w-6 h-6" />
+                                        </motion.button>
                                         <div className="overflow-hidden rounded-3xl max-h-[60vh] sm:max-h-[65vh]">
                                             <img
                                                 src={
@@ -426,14 +426,7 @@ export default function Stories({ data }) {
                                             'bg-white text-black hover:bg-opacity-90 transition-all'
                                         )}
                                         style={{
-                                            background: `linear-gradient(45deg, ${
-                                                activeGroup.ringColor ||
-                                                '#ffffff'
-                                            }, ${adjustColor(
-                                                activeGroup.ringColor ||
-                                                    '#ffffff',
-                                                30
-                                            )})`,
+                                            backgroundColor: '#ffffff',
                                             color: getContrastColor(
                                                 activeGroup.ringColor ||
                                                     '#ffffff'
@@ -460,4 +453,3 @@ export default function Stories({ data }) {
         </div>
     )
 }
-
