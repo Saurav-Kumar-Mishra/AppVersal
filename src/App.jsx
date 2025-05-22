@@ -1,0 +1,11 @@
+import Story from "./Components/Story";
+import Home from "./Pages/Home";
+function App() {
+  return (
+    <>
+      <Home />
+    </>
+  );
+}
+
+export default App;
