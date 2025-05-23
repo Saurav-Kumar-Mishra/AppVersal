@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { ChevronLeft, ChevronRight, X, ExternalLink } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { adjustColor } from '@/utils/Helper'
 import { getContrastColor } from '@/utils/Helper'
 import { cn } from '@/lib/utils.js'
 
